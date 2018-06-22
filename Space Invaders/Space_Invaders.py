@@ -2,6 +2,7 @@ import sys
 import pygame
 
 from Settings import Settings
+from Ship import Ship
 
 def runGame():
     #initialize pygame, screen and screen object
@@ -10,8 +11,8 @@ def runGame():
     screen = pygame.display.set_mode((aiSettings.screenWidth, aiSettings.screenHeight))
     pygame.display.set_caption(aiSettings.caption)
 
-    #set the background color uses RGB
-    bgColor = (0,230,0)
+    #make a ship
+    ship = Ship(screen)
 
     #start the main loop for the game
     while True:
@@ -21,6 +22,8 @@ def runGame():
                 sys.exit()
         #Redraw the screen during each pass through the loop
         screen.fill(aiSettings.bgColor)
+        ship.blitme()
+
         #make the most recently drawn screen visible
         pygame.display.flip()
 runGame()

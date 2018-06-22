@@ -5,7 +5,7 @@ class Settings(object):
         #Screen settings
         self.screenWidth = 1200
         self.screenHeight = 800
-        self.bgColor = (0,230,0)
+        self.bgColor = (230,230,230)
         self.caption = "Alien Invasion"
 
 

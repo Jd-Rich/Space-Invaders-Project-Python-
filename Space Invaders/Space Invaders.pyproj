@@ -21,6 +21,12 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Settings.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Ship.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Space_Invaders.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
