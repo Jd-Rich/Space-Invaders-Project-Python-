@@ -17,7 +17,7 @@ def runGame():
     #start the main loop for the game
     while True:
         #Watch for keyboard/mouse events
-        gf.checkEvents()
+        gf.checkEvents(ship)
         gf.updateScreen(aiSettings, screen, ship)
 
 runGame()
