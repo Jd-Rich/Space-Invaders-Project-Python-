@@ -5,9 +5,9 @@ class Ship(object):
     def __init__(self, screen):
         self.screen = screen
         #load the ship image and get its rect
-        self.image = pygame.image.load('image/ship.bmp')
+        self.image = pygame.image.load('images/ship.bmp')
         self.rect = self.image.get_rect()
-        self.screenRect = screen.get_rect()
+        self.screen_rect = screen.get_rect()
 
         #start each new ship at the bottom center of the screen
         self.rect.centerx = self.screen_rect.centerx
