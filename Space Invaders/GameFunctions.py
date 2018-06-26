@@ -11,8 +11,14 @@ def checkEvents(ship):
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_d:
                 #move the ship to the right
-                ship.rect.centerx += 1
-
+                ship.movingRight = True
+            elif event.key == pygame.K_a:
+                ship.movingLeft = True
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_d:
+                ship.movingRight = False
+            elif event.key == pygame.K_a:
+                ship.movingLeft = False
 
 def updateScreen(aiSettings, screen, ship):
     """Update images on the screen and print to knew screen"""

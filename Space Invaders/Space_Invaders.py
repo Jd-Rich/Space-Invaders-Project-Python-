@@ -18,6 +18,7 @@ def runGame():
     while True:
         #Watch for keyboard/mouse events
         gf.checkEvents(ship)
+        ship.update()
         gf.updateScreen(aiSettings, screen, ship)
 
 runGame()
