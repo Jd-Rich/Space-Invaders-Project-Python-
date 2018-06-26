@@ -12,7 +12,7 @@ def runGame():
     pygame.display.set_caption(aiSettings.caption)
 
     #make a ship
-    ship = Ship(screen)
+    ship = Ship(aiSettings, screen)
 
     #start the main loop for the game
     while True:

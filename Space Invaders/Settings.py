@@ -8,6 +8,9 @@ class Settings(object):
         self.bgColor = (230,230,230)
         self.caption = "Alien Invasion"
 
+        #Ship settings
+        self.shipSpeedFactor = 1.5
+
 
 
         

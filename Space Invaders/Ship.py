@@ -2,8 +2,9 @@ import pygame
 
 class Ship(object):
     """Initializes the ship and set its starting position"""
-    def __init__(self, screen):
+    def __init__(self, aiSettings, screen):
         self.screen = screen
+        self.aiSettings = aiSettings
         #load the ship image and get its rect
         self.image = pygame.image.load('images/ship.bmp')
         self.rect = self.image.get_rect()
@@ -12,6 +13,9 @@ class Ship(object):
         #start each new ship at the bottom center of the screen
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
+        
+        #store a decimal value for the ships center
+        self.center = float(self.rect.centerx)
 
         #movement flag
         self.movingRight = False
@@ -23,10 +27,15 @@ class Ship(object):
 
     def update(self):
         """Updates the ships position based on the movement flag"""
+        #update the ships center value, not the rect
         if self.movingRight:
-            self.rect.centerx += 1
+            self.center += self.aiSettings.shipSpeedFactor
         if self.movingLeft:
-            self.rect.centerx -= 1
+            self.center -= self.aiSettings.shipSpeedFactor
+
+        #update the rect object from self.center
+        self.rect.centerx = self.center
+
 
 
 
