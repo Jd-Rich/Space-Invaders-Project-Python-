@@ -5,6 +5,7 @@ class Ship(object):
     def __init__(self, aiSettings, screen):
         self.screen = screen
         self.aiSettings = aiSettings
+
         #load the ship image and get its rect
         self.image = pygame.image.load('images/ship.bmp')
         self.rect = self.image.get_rect()

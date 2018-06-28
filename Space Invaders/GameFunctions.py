@@ -9,16 +9,23 @@ def checkEvents(ship):
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_d:
-                #move the ship to the right
-                ship.movingRight = True
-            elif event.key == pygame.K_a:
-                ship.movingLeft = True
+            checkKeydownEvents(event, ship)
         elif event.type == pygame.KEYUP:
-            if event.key == pygame.K_d:
-                ship.movingRight = False
-            elif event.key == pygame.K_a:
-                ship.movingLeft = False
+            checkKeyupEvents(event, ship)
+
+def checkKeydownEvents(event, ship):
+    """Responds to key presses"""
+    if event.key == pygame.K_d:
+        ship.movingRight = True
+    elif event.key == pygame.K_a:
+        ship.movingLeft = True
+
+def checkKeyupEvents(event, ship):
+    """Responds to key releases"""
+    if event.key == pygame.K_d:
+        ship.movingRight = False
+    elif event.key == pygame.K_a:
+        ship.movingLeft = False
 
 def updateScreen(aiSettings, screen, ship):
     """Update images on the screen and print to knew screen"""

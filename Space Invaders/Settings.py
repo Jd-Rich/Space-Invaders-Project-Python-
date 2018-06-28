@@ -5,11 +5,17 @@ class Settings(object):
         #Screen settings
         self.screenWidth = 1400
         self.screenHeight = 700
-        self.bgColor = (230,230,230)
+        self.bgColor = (0,0,0)
         self.caption = "Alien Invasion"
 
         #Ship settings
         self.shipSpeedFactor = 1.5
+
+        #Bullet settings
+        self.bulletSpeedFactor = 1
+        self.bulletHeight = 15
+        self.bullerWidth = 3
+        self.bulletColor = (5,5,5)
 
 
 
