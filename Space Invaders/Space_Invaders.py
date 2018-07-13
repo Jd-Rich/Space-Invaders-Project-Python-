@@ -3,6 +3,8 @@ from pygame.sprite import Group
 
 from Settings import Settings
 from Ship import Ship
+from Alien import Alien
+
 import GameFunctions as gf
 
 def runGame():
@@ -14,16 +16,22 @@ def runGame():
 
     #make a ship
     ship = Ship(aiSettings, screen)
+    #make an alien
+    alien = Alien(aiSettings, screen)
 
-    #make a group to store bullets in
+    #make a group to store bullets in & a group of aliens
     bullets = Group()
+    aliens = Group()
+
+    #create the fleat of aliens
+    gf.createFleet(aiSettings, screen, ship, aliens)
 
     #start the main loop for the game
     while True:
         #Watch for keyboard/mouse events
         gf.checkEvents(aiSettings, screen, ship, bullets)
         ship.update()
-        bullets.update()
-        gf.updateScreen(aiSettings, screen, ship, bullets)
+        gf.updateBullets(bullets)
+        gf.updateScreen(aiSettings, screen, ship, aliens, bullets)
 
 runGame()

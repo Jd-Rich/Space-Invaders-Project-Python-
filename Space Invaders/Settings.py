@@ -3,7 +3,7 @@ class Settings(object):
     def __init__(self):
         """initialize the games settings"""
         #Screen settings
-        self.screenWidth = 1400
+        self.screenWidth = 1200
         self.screenHeight = 700
         self.bgColor = (0,0,0)
         self.caption = "Alien Invasion"
@@ -12,10 +12,11 @@ class Settings(object):
         self.shipSpeedFactor = 1.5
 
         #Bullet settings
-        self.bulletSpeedFactor = 1
+        self.bulletSpeedFactor = 2
         self.bulletHeight = 15
-        self.bullerWidth = 3
-        self.bulletColor = (5,5,5)
+        self.bulletWidth = 3
+        self.bulletColor = (0,250,0)
+        self.bulletsAllowed = 3
 
 
 
